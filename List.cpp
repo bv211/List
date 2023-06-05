@@ -12,9 +12,9 @@ void print(List& list) {
 }
 
 int main() {
-	List list;
-
 	srand(time(nullptr));
+
+	List list;
 
 	for (int i = 0; i < 4; i++)
 		list.add(rand() % 100);
