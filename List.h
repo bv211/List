@@ -33,7 +33,8 @@ public:
 		if (index < 0 || index >= _count)
 			return;
 
-		for (size_t i = index; i < _count - 1; i++) {
+		auto count = _count - 1;
+		for (int i = index; i < count; i++) {
 			swap(_array[i], _array[i + 1]);
 		}
 		_count--;
@@ -86,7 +87,7 @@ private:
 	void resize() {
 		_capacity += 4;
 		auto* tmp = new int[_capacity];
-		for (size_t i = 0; i < _count; i++)
+		for (int i = 0; i < _count; i++)
 			tmp[i] = _array[i];
 
 		delete[] _array;

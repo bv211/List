@@ -5,8 +5,10 @@ using namespace std;
 
 void print(List& list) {
 	auto count = list.get_count();
-	for (int i = 0; i < count; i++)
-		cout << list[i] << endl;
+	for (int i = 0; i < count; i++) {
+		cout << "index " << i << ": "
+			<< list[i] << endl;
+	}
 }
 
 int main() {
@@ -20,10 +22,14 @@ int main() {
 	cout << "Before delete" << endl;
 	print(list);
 
-	list.remove_soft(1);
-	list.remove(1);
+	cout << "\nremove soft index " << 0 << ": "
+		<< list[0] << endl;
+	list.remove_soft(0);
+	print(list);
 
-	cout << "After delete" << endl;
+	cout << "\nremove hard index " << 0 << ": "
+		<< list[0] << endl;
+	list.remove(0);
 	print(list);
 
 	return 0;
